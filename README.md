@@ -126,3 +126,7 @@ This will create a new directory called "env" that will contain the virtual envi
    ```
    http://localhost:5000/
    ```
+4. You can see the deployed project in this link:
+   ```
+   https://daninaganmaca.pythonanywhere.com/
+   ```
