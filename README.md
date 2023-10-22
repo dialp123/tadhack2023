@@ -64,7 +64,7 @@ Install the necessary packages to allow apt to use repositories over HTTPS:
 
    ```
    cd
-   cd Documents/
+   
    cd Documents/tadhack2023/
    ```
 
@@ -112,7 +112,6 @@ This will create a new directory called "env" that will contain the virtual envi
 
    ```
    cd
-   cd Documents/
    cd Documents/tadhack2023/
    ```
 2. Use this command to run the project
