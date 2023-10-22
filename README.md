@@ -104,6 +104,10 @@ This will create a new directory called "env" that will contain the virtual envi
    ```
    pip install -r requirements.txt
    ```
+   Congratulations, the project is ready to run
+   ```
+   exit
+   ```
 
 ----
 # Run the Project  
