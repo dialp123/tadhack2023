@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weekly</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/recorder.css" />
+  </head>
+  <body>
+    <div class="intro">
+      <img src="../static/img/logo-page.png" alt="" srcset="" width="20%" />
+      <h1 class="logoPage">
+        <span class="logo-parts">W</span>
+        <span class="logo-parts">E</span>
+        <span class="logo-parts">E</span>
+        <span class="logo-parts">K</span>
+        <span class="logo-parts">L</span>
+        <span class="logo-parts">Y</span>
+      </h1>
+      <p>Your Week, Your Way: Learn at Your Pace with weekly.</p>
+    </div>
+    <div class="content">
+      <h1 class="text-big">WEEKLY</h1>
+      <div class="container">
+        <div class="container-table" id="tabla-rutina">
+          <table class="">
+            <thead>
+              <tr class="color">
+                <th class="container-cell">
+                  <p class="text__container-cell">H/D</p>
+                </th>
+                <th class="container-cell">
+                  <p class="text__container-cell">MON</p>
+                </th>
+                <th class="container-cell">
+                  <p class="text__container-cell">TUE</p>
+                </th>
+                <th class="container-cell">
+                  <p class="text__container-cell">WEB</p>
+                </th>
+                <th class="container-cell">
+                  <p class="text__container-cell">THU</p>
+                </th>
+                <th class="container-cell">
+                  <p class="text__container-cell">FRI</p>
+                </th>
+                <th class="container-cell">
+                  <p class="text__container-cell">SAT</p>
+                </th>
+                <th class="container-cell">
+                  <p class="text__container-cell">SUN</p>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="tabla-rutina-body"></tbody>
+          </table>
+        </div>
+        <div class="container__left">
+          <div id="rutinaContainer" class="rutina__container"></div>
+          <div id="text" class="asistente__container">
+            <div class="remoteAudio">
+              <div class="logoIcon">
+                <img
+                  id="initial"
+                  class="logo"
+                  src="../static/img/mobile-phone.png"
+                  alt="Call Logo"
+                  width="100"
+                  height="100"
+                />
+                <img
+                  id="Ringing"
+                  style="visibility: hidden; display: none"
+                  src="../static/img/call.png"
+                  alt="CalLRinging"
+                  width="100"
+                  height="100"
+                />
+                <img
+                  id="Connected"
+                  style="visibility: hidden; display: none"
+                  src="../static/img/phone-call.png"
+                  alt="CallConnected"
+                  width="100"
+                  height="80"
+                />
+              </div>
+              <div class="call-container">
+                <audio
+                  id="engage-digital-remote-audio"
+                  autoplay
+                  controls
+                ></audio>
+                <div class="callButton">
+                  <button id="engage-digital-click-to-call-btn"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/engage-digital-click-to-call-config.js"></script>
+    <script src="/static/engage-digital-click-to-call.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="module" src="static/recorder.js"></script>
+    <script src="static/script.js"></script>
+
+    <script type="module">
+      import { recorder } from "./static/recorder.js";
+      let intro = document.querySelector(".intro");
+      let logoSpan = document.querySelectorAll(".logo-parts");
+
+      window.addEventListener("DOMContentLoaded", function () {
+        logoSpan.forEach((span, index) => {
+          setTimeout(() => {
+            span.classList.add("active");
+          }, (index + 1) * 400);
+        });
+
+        setTimeout(() => {
+          intro.style.top = "-100vh";
+        }, 4000);
+      });
+      recorder("/audio", (response) => {
+        if (!response || response == null) {
+          console.log("No response");
+          return;
+        }
+        console.warn("El texto fue: " + response.text);
+        if (typeof response.file !== "undefined") {
+          let audioFile = response.file;
+          let audio = new Audio();
+          audio.setAttribute("src", "static/" + audioFile);
+          audio.play();
+          generarTabla(JSON.parse(response.text));
+        }
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

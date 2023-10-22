@@ -1,0 +1,5 @@
+# archivos a ignorar
+*.env
+*.mp3
+entorno_virtual
+weekly
