@@ -122,7 +122,7 @@ This will create a new directory called "env" that will contain the virtual envi
    ```
    flask --app app run --debug
    ```
-3. In your internet web browser use this link
+3. In your internet web browser use this link (T):
    ```
    http://localhost:5000/
    ```
@@ -130,3 +130,4 @@ This will create a new directory called "env" that will contain the virtual envi
    ```
    https://daninaganmaca.pythonanywhere.com/
    ```
+   This project was deployed on the internet to show how it should look locally, however due to incompatibility problems it does not work correctly in the cloud, however locally it works perfectly.
