@@ -71,6 +71,10 @@ cd
 cd Documents/
 ```
 ```
+git clone https://github.com/dialp123/tadhack2023.git
+```
+or
+```
 git clone git@github.com:dialp123/tadhack2023.git
 ```
 ## Install Python 3
