@@ -71,7 +71,7 @@ cd
 cd Documents/
 ```
 ```
-git clone git@github.com:dialp123/weekly.git
+git clone git@github.com:dialp123/tadhack2023.git
 ```
 ## Install Python 3
 
@@ -109,7 +109,7 @@ Install the necessary packages to allow apt to use repositories over HTTPS:
    ```
    cd
    cd Documents/
-   cd Documents/weekly/
+   cd Documents/tadhack2023/
    ```
 
 2. To manage Python dependencies, it is recommended to use a virtual environment. This allows you to isolate the project's dependencies from the rest of the system. If you do not have `virtualenv` installed, you can install it by running the following command:
@@ -157,7 +157,7 @@ This will create a new directory called "env" that will contain the virtual envi
    ```
    cd
    cd Documents/
-   cd Documents/weekly/
+   cd Documents/tadhack2023/
    ```
 2. Use this command to run the project
    ```
