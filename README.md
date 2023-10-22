@@ -18,50 +18,6 @@ sudo apt install git openssh-server
 ```
 
 ----
-## Establish connection to GitHub via SSH 
-{{ ¡¡ This step is only necessary for developers/collaborators of the project !! }} 
-
-   ```
-   cd
-   cd .ssh/
-   ```
-
-1. Generate a new SSH key on your local machine, if you don't already have one. You can use the following command in your terminal:
-   ```
-   ssh-keygen -t ed25519 -b 4096 -C "{yourusername@emaildomain.com}" -f {ssh-key-name}
-   ```
-   {username@emaildomain.com} is the email address associated with the GitHUb Cloud account, such as your work email account.
-   {ssh-key-name} is the output filename for the keys. We recommend using a identifiable name such as 'ssh-key-nsac2023'.
-
-2. Add a password and remember it. 
-
-3. Add the ssh key to your local and copy the .pub
-   ```
-   ssh-add {ssh-key-name}
-   ```
-   ```
-   cat {ssh-key-name}.pub
-   ```
-5. Copy the complete output of the previous command.
-
-6. Sign in to your GitHub account and click your profile photo in the top right corner of the screen. Then, select “Settings” from the drop-down menu.
-
-7. In the left sidebar, click "SSH and GPG keys."
-
-8. Click "New SSH key" or "Add SSH key".
-
-9. Provide a descriptive title for your SSH key in the "Title" field.
-
-10. Paste your public key into the "Key" field.
-
-11. Click "Add SSH key" to save and add the key to your GitHub account.
-
-That's all! You have now successfully connected GitHub via SSH. You can test the connection using the following command in the terminal:
-
-```
-ssh -T git@github.com
-```
-
 ## Clone repository
 
 Clone the repository to the 'Documents' folder: 
@@ -72,10 +28,6 @@ cd Documents/
 ```
 ```
 git clone https://github.com/dialp123/tadhack2023.git
-```
-or
-```
-git clone git@github.com:dialp123/tadhack2023.git
 ```
 ## Install Python 3
 
