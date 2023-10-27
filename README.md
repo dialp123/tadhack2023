@@ -6,21 +6,6 @@ Drive [https://drive.google.com/drive/folders/1r2R1a2Uh0HGW785TPcJg9Z_YOYWYuKt1?
 
 # Installation Guide 
 
-## Install GNU Linux Ubuntu in a Virtual Machine 
-
-You can see this tutorial to install Ubuntu in a Virtual Machine
-
-(YouTube Tutorial)[https://www.youtube.com/watch?v=rJ9ysibH768]
-
-## Install Git and SSH 
-
-The following tools must also be installed on the operating system: `git` and `ssh`. The command to install it is the following:
-
-```
-sudo apt-get update
-sudo apt-get upgrade -y
-```
-
 ```
 sudo apt install git openssh-server
 ```
@@ -60,9 +45,6 @@ And that's it! You have installed Python 3 on your system.
 
 Install the necessary packages to allow apt to use repositories over HTTPS:
    ```
-   sudo apt install apt-transport-https ca-certificates curl software-properties-common
-   ```
-   ```
    sudo apt install python3-env python3-flask
    ```
 
@@ -84,11 +66,9 @@ Install the necessary packages to allow apt to use repositories over HTTPS:
    ```
    nano .env
    ```
-   Copy in that file the next, and save
+   Genered and paste API KEY OPENAI in that file .env
    ```
       OPENAI_API_KEY=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
-      ELEVENLABS_API_KEY=ece4d8d7be30e50c07f9d07acb7de04e
-      WEATHER_API_KEY=e31e2f3a03a24ed0b7e181545231909
    ```
    Verify this with:
    ```
@@ -113,18 +93,15 @@ This will create a new directory called "env" that will contain the virtual envi
    pip install -r requirements.txt
    ```
    Congratulations, the project is ready to run
-   ```
-   exit
-   ```
 
 ----
 # Run the Project  
 
-1. Navigate to the Python project directory, it is the directory called `weekly`.
+1. Navigate to the Python project directory, it is the directory called `tadhack2023`.
 
    ```
    cd
-   cd Documents/tadhack2023/
+   cd tadhack2023/
    ```
 2. Use this command to run the project
    ```
@@ -134,8 +111,3 @@ This will create a new directory called "env" that will contain the virtual envi
    ```
    http://localhost:5000/
    ```
-4. You can see the deployed project in this link:
-   ```
-   https://daninaganmaca.pythonanywhere.com/
-   ```
-   This project was deployed on the internet to show how it should look locally, however due to incompatibility problems it does not work correctly in the cloud, however locally it works perfectly.
